@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: black;
+            color: whitesmoke;
+            min-height: 100vh;
+        }
+    
+        .nav-links {
+            list-style: none;
+            width: 100%;
+            margin-bottom: auto;
+        }
+
+        .nav-links li {
+            margin-bottom: 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #3b82f6; /* Accent Color */
+        }
+
+        .sidebar-footer-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ec4899; /* Pink color matching image */
+            margin-top: 2rem;
+        }
+
+        /* 2. MAIN CONTENT AREA (Scrollable) */
+        .main-content {
+            margin-left: 300px; /* Offset width of the sidebar */
+            flex: 1;
+            padding: 4rem 3rem;
+            max-width: 1000px;
+        }
+
+        .intro-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .intro-section h2 {
+            font-size: 1.4rem;
+            color: whitesmoke;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .intro-section h2 strong {
+            color: grey;
+            font-weight: 600;
+        }
+
+        .intro-section h2 a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .intro-section h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .intro-section .instruction-text {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        /* 3. CARD GRID SYSTEM */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: grey;
+            border-radius: 4px;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            text-align: left;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border-bottom: 3px solid transparent;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            min-height: 200px;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-card i {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.15rem;
+            color: #1e293b;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        /* Unique Border Bottom & Icon Colors for Card Variance */
+        .card-blue { border-bottom-color: #3b82f6; }
+        .card-blue i { color: #3b82f6; }
+
+        .card-red { border-bottom-color: #ef4444; }
+        .card-red i { color: #ef4444; }
+
+        .card-amber { border-bottom-color: #f59e0b; }
+        .card-amber i { color: #f59e0b; }
+
+        .card-purple { border-bottom-color: #a855f7; }
+        .card-purple i { color: #a855f7; }
+
+        /* Responsive Settings for Mobile Devices */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 2rem 1rem;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+            .nav-links {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-top: 1rem;
+            }
+            .nav-links li {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Layout -->
+    <aside class="sidebar">
+        <h1>Project-ASC</h1>
+        <div class="subtitle">Project-ASC | 2nd Year CS - Game Design</div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <section class="intro-section">
+            <h2>
+                <strong>Project-ASC</strong> is a concept game for our 2nd Year CA1 project, which is developed by Aedin, Scott and Connor.
+            </h2>
+            <h2>
+                The game has no offical name yet, more to come soon...
+            </h2>
+        </section>
+
+        <!-- Grid of Project/Skill Categories -->
+        <div class="card-grid">
+            
+            <a href="#" class="portfolio-card card-blue">
+                <i class="fa-regular fa-lightbulb"></i>
+                <h3>About</h3>
+            </a>
+
+            <a href="#" class="portfolio-card card-red">
+                <i class="fa-solid fa-code"></i>
+                <h3>Team & Roles</h3>
+            </a>
+
+            <a href="#" class="portfolio-card card-amber">
+                <i class="fa-solid fa-database"></i>
+                <h3>Development</h3>
+            </a>
+
+            <a href="#" class="portfolio-card card-purple">
+                <i class="fa-brands fa-android"></i>
+                <h3>Conecpt Art</h3>
+            </a>
+
+            <a href="#" class="portfolio-card card-amber">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Updates</h3>
+            </a>
+
+            <a href="#" class="portfolio-card card-purple">
+                <i class="fa-solid fa-globe"></i>
+                <h3>Contact</h3>
+            </a>
